@@ -12,9 +12,7 @@ public class PointOfIntrest : MonoBehaviour
     private Image bgImage;
     public Color normalColor;
     public Color highlightColor;
-
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +24,7 @@ public class PointOfIntrest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(Camera.main.transform);
     }
 
     public void initPoint(string initType, Sprite iconSprite)

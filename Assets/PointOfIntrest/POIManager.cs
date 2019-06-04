@@ -9,26 +9,24 @@ public enum Type
     Blocked,
     Boat,
     Car,
-    Confirm,
     Electrical,
-    Exit,
     FireFighter,
     Helicopter,
-    MapPin,
     Medical
 }
 
 public class POIManager : MonoBehaviour
 {
+    public GameObject pointPrefab;
     public List<PointOfIntrest> allInterestPoints;
     public List<Sprite> iconImages;
 
-
-
+    public Transform testTransform;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        createPointOfInterest("Airplane", testTransform);
     }
 
     // Update is called once per frame
@@ -37,8 +35,17 @@ public class POIManager : MonoBehaviour
         
     }
 
-    public void createPointOfInterest()
+    public void createPointOfInterest(string spawnType, Transform spawnPoint)
     {
+        GameObject spawnedPoint = Instantiate(pointPrefab);
+        spawnedPoint.transform.position = testTransform.position;
 
+        foreach (Sprite sp in iconImages)
+        {
+            if(sp.name.ToString() == spawnType)
+            {
+                spawnedPoint.GetComponent<PointOfIntrest>().initPoint(spawnType, sp);
+            }
+        }
     }
 }

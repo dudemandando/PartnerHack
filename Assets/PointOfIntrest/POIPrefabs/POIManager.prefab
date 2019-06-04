@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3711e2696243d174c8023776ff53cd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointPrefab: {fileID: 6306954037115861930, guid: a9660e6fd7d0035468c0cb67f6f40269,
+    type: 3}
   allInterestPoints: []
   iconImages:
   - {fileID: 21300000, guid: 6f9158c45dce7a84fb8c1f15025520c3, type: 3}

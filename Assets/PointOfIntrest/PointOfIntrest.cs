@@ -29,8 +29,40 @@ public class PointOfIntrest : MonoBehaviour
         
     }
 
-    public void initPoint(Type initType)
+    public void initPoint(string initType, Sprite iconSprite)
     {
+        iconImage = transform.Find("Canvas").Find("IconImage").GetComponent<Image>();
+        bgImage = transform.Find("Canvas").Find("Bg").GetComponent<Image>();
 
+        switch (initType)
+        {
+            case "Airplane":
+                pointType = Type.Airplane;
+                break;
+            case "Blocked":
+                pointType = Type.Blocked;
+                break;
+            case "Boat":
+                pointType = Type.Blocked;
+                break;
+            case "Car":
+                pointType = Type.Blocked;
+                break;
+            case "Electrical":
+                pointType = Type.Electrical;
+                break;
+            case "FireFighter":
+                pointType = Type.FireFighter;
+                break;
+            case "Helicopter":
+                pointType = Type.Helicopter;
+                break;
+            case "Medical":
+                pointType = Type.Medical;
+                break;
+
+        }
+        
+        iconImage.sprite = iconSprite;
     }
 }

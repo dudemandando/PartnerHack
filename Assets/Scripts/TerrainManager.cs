@@ -12,10 +12,15 @@ public class TerrainManager : MonoBehaviour
     //E: 141.048
     //S: 37.297
 
-    public float lowLat = 37.297f;
-    public float highLat = 37.347f;
-    public float lowLong = 140.986f;
-    public float highLong = 141.048f;
+    //public float lowLat = 37.297f;
+    //public float highLat = 37.347f;
+    //public float lowLong = 140.986f;
+    //public float highLong = 141.048f;
+
+    public float lowLat = 0f;
+    public float highLat = 1f;
+    public float lowLong = 0f;
+    public float highLong = 1f;
 
 
     public Bounds terrainBounds;
@@ -57,14 +62,15 @@ public class TerrainManager : MonoBehaviour
     public void test()
     {
         Debug.Log("Running test");
-        //37.316938, 141.026111
-        float newX, newY, newZ;
-        float lat = 37.316938f;
-        float lng = 141.026111f;
+        //37.318508, 141.037956
 
-        newZ = lat.Remap(lowLat, highLat, LowZ, HighZ);
-        newX = lng.Remap(lowLong, highLong, LowX, HighX);
-        
+        float newX, newZ;
+        float lat = 37.318508f;
+        float lng = 141.037956f;
+
+        newZ = -1 * lat.Remap(lowLat, highLat, LowZ, HighZ);
+        newX = -1 * lng.Remap(lowLong, highLong, LowX, HighX);
+
         testObj.transform.position = this.transform.TransformPoint(new Vector3(newX, 0.02f, newZ));
 
     }

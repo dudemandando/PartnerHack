@@ -79,7 +79,7 @@ LightmapSettings:
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVRFilteringMode: 2
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -617,7 +617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1357575746
 Transform:
   m_ObjectHideFlags: 0
@@ -627,7 +627,7 @@ Transform:
   m_GameObject: {fileID: 1357575745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 7176363}
   m_RootOrder: 0
@@ -1602,7 +1602,7 @@ PrefabInstance:
     - target: {fileID: 4953316616979934226, guid: 7e2411e0b2b91d749b378bc3e4f39833,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953316616979934227, guid: 7e2411e0b2b91d749b378bc3e4f39833,
         type: 3}
@@ -1664,16 +1664,5 @@ PrefabInstance:
       propertyPath: testTransform
       value: 
       objectReference: {fileID: 7176363}
-    - target: {fileID: 8533752015654828192, guid: 7e2411e0b2b91d749b378bc3e4f39833,
-        type: 3}
-      propertyPath: terrainManager
-      value: 
-      objectReference: {fileID: 1250806035}
-    - target: {fileID: 8533752015654828192, guid: 7e2411e0b2b91d749b378bc3e4f39833,
-        type: 3}
-      propertyPath: pointPrefab
-      value: 
-      objectReference: {fileID: 8727277739111286423, guid: 7ce8fbc5a719ded49808ebce4cbdf5ce,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2411e0b2b91d749b378bc3e4f39833, type: 3}

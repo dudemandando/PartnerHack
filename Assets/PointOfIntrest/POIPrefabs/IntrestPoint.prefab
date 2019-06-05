@@ -627,6 +627,8 @@ GameObject:
   - component: {fileID: 8727277739111286416}
   - component: {fileID: 8727277739111286417}
   - component: {fileID: 8727277739111286422}
+  - component: {fileID: 1334068471954190604}
+  - component: {fileID: 6657876806823059911}
   m_Layer: 0
   m_Name: IntrestPoint
   m_TagString: Untagged
@@ -706,7 +708,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.42
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8727277739111286422
 MonoBehaviour:
@@ -727,6 +729,100 @@ MonoBehaviour:
   normalColor: {r: 0, g: 0, b: 0, a: 0}
   highlightColor: {r: 0, g: 0, b: 0, a: 0}
   heightStandOff: 0
+--- !u!114 &1334068471954190604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8727277739111286423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e6657bab90ac149872e5361b42ea62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusEnabled: 1
+  timeToTriggerDwellInSec: 5
+  selectAction:
+    id: 1
+    description: Select
+    axisConstraint: 2
+  voice_select: []
+  cursor_snapToCenter: 0
+  OnLookAtStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6657876806823059911}
+        m_MethodName: HighlightImageBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  WhileLookingAtTarget:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnLookAway:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6657876806823059911}
+        m_MethodName: defaultImageBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDwell:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6657876806823059911}
+        m_MethodName: ToggleCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &6657876806823059911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8727277739111286423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85901ebeee181224083d89467282ff74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasToToggle: {fileID: 8727277737945897963}
+  defaultImageBackgroundColor: {r: 0.26666668, g: 0.41176474, b: 0.5647059, a: 1}
+  highlightImageBackgroundColor: {r: 0.8301887, g: 0.41948918, b: 0.090067655, a: 1}
+  backgroundImage: {fileID: 8727277738099758052}
 --- !u!1 &8727277739554602398
 GameObject:
   m_ObjectHideFlags: 0

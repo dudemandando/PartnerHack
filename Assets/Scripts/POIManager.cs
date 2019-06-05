@@ -36,9 +36,11 @@ public class POIManager : MonoBehaviour
   
     public void createPointOfInterest(string spawnType, Transform spawnPoint, float lat, float lng)
     {
+        //Spawn the point of intrest at the appropriate Lat and Long passed in
         GameObject spawnedPoint = Instantiate(pointPrefab, terrainManager.SetPointLocationFromLatLong(lat, lng), Quaternion.identity);
         
 
+        //loop thorugh all the sprites and find the appropriate one via sprite name
         foreach (Sprite sp in iconImages)
         {
             if(sp.name.ToString() == spawnType)
@@ -47,6 +49,11 @@ public class POIManager : MonoBehaviour
             }
         }
         
+        //Add a little standoff from the terrain
         spawnedPoint.GetComponent<PointOfIntrest>().AddHeightStandoff();
+
+        //Add to the list of all points of interest
+        allInterestPoints.Add(spawnedPoint.GetComponent<PointOfIntrest>());
+
     }
 }

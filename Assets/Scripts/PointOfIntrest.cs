@@ -13,6 +13,8 @@ public class PointOfIntrest : MonoBehaviour
     public Color normalColor;
     public Color highlightColor;
     public float heightStandOff;
+
+    private bool bPropogatedOnce = false;
     
 
     // Update is called once per frame
@@ -59,5 +61,15 @@ public class PointOfIntrest : MonoBehaviour
     public void AddHeightStandoff()
     {
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + heightStandOff, this.transform.position.z);
+    }
+
+    public void SpawnReplacement()
+    {
+        if(bPropogatedOnce == false)
+        {
+            var replace = Instantiate(this.gameObject, transform.position, Quaternion.identity, this.transform.parent);
+        }
+
+        bPropogatedOnce = true;        
     }
 }

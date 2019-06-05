@@ -32,20 +32,6 @@ public class TerrainManager : MonoBehaviour
     public GameObject testObj;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        GetBounds();
-        test();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     //Make sure to call this anytime we scale or move
     public void GetBounds()
     {
@@ -59,19 +45,19 @@ public class TerrainManager : MonoBehaviour
 
     }
 
-    public void test()
+    public Vector3 SetPointLocationFromLatLong(float lat, float lng)
     {
-        Debug.Log("Running test");
+        GetBounds();
+        Debug.Log("Running test with lat and long of: " +  lat + " "+ lng);
         //37.318508, 141.037956
 
         float newX, newZ;
-        float lat = 37.318508f;
-        float lng = 141.037956f;
-
+        
         newZ = -1 * lat.Remap(lowLat, highLat, LowZ, HighZ);
         newX = -1 * lng.Remap(lowLong, highLong, LowX, HighX);
-
-        testObj.transform.position = this.transform.TransformPoint(new Vector3(newX, 0.02f, newZ));
+        Debug.Log(newZ + " " + newX);
+        Debug.Log("New Location should be: " + this.transform.TransformPoint(new Vector3(newX, 0.02f, newZ)));
+        return this.transform.TransformPoint(new Vector3(newX, 0.02f, newZ));
 
     }
 }

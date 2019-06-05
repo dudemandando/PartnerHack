@@ -20,25 +20,24 @@ public class POIManager : MonoBehaviour
     public GameObject pointPrefab;
     public List<PointOfIntrest> allInterestPoints;
     public List<Sprite> iconImages;
-
     public Transform testTransform;
-    
+    public TerrainManager terrainManager;
+
+
+    //float lat = 37.318508f;
+    //float lng = 141.037956f;
+
     // Start is called before the first frame update
     void Start()
     {
-        createPointOfInterest("Airplane", testTransform);
+        createPointOfInterest("Radiation", testTransform, 37.318508f, 141.037956f);
     }
 
-    // Update is called once per frame
-    void Update()
+  
+    public void createPointOfInterest(string spawnType, Transform spawnPoint, float lat, float lng)
     {
+        GameObject spawnedPoint = Instantiate(pointPrefab, terrainManager.SetPointLocationFromLatLong(lat, lng), Quaternion.identity);
         
-    }
-
-    public void createPointOfInterest(string spawnType, Transform spawnPoint)
-    {
-        GameObject spawnedPoint = Instantiate(pointPrefab);
-        spawnedPoint.transform.position = testTransform.position;
 
         foreach (Sprite sp in iconImages)
         {
@@ -47,5 +46,7 @@ public class POIManager : MonoBehaviour
                 spawnedPoint.GetComponent<PointOfIntrest>().initPoint(spawnType, sp);
             }
         }
+        
+        spawnedPoint.GetComponent<PointOfIntrest>().AddHeightStandoff();
     }
 }

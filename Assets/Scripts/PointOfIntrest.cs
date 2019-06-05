@@ -8,29 +8,21 @@ public class PointOfIntrest : MonoBehaviour
 
     public Type pointType;
     public GameObject terrainRefPoint; //Ghost reference point to be attached to the Terrain
-    private Image iconImage;
-    private Image bgImage;
+    public Image iconImage;
+    public Image bgImage;
     public Color normalColor;
     public Color highlightColor;
+    public float heightStandOff;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        iconImage = transform.Find("Canvas").Find("IconImage").GetComponent<Image>();
-        bgImage = transform.Find("Canvas").Find("Bg").GetComponent<Image>();
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(Camera.main.transform);
+        //transform.LookAt(Camera.main.transform);
     }
 
     public void initPoint(string initType, Sprite iconSprite)
     {
-        iconImage = transform.Find("Canvas").Find("IconImage").GetComponent<Image>();
-        bgImage = transform.Find("Canvas").Find("Bg").GetComponent<Image>();
 
         switch (initType)
         {
@@ -62,5 +54,10 @@ public class PointOfIntrest : MonoBehaviour
         }
         
         iconImage.sprite = iconSprite;
+    }
+
+    public void AddHeightStandoff()
+    {
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + heightStandOff, this.transform.position.z);
     }
 }

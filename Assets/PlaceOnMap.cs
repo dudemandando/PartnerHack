@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Microsoft.MixedReality.Toolkit.UI;
 
 public class PlaceOnMap : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class PlaceOnMap : MonoBehaviour
     {
         isBeingManipulated = false;
         lr.enabled = false;
+        GetComponent<BoundingBox>().UnhighlightWires();
 
         if (hit.transform != null)
         {

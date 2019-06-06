@@ -12,5 +12,6 @@ public class IntrestPointSpawner : MonoBehaviour
         GameObject tempPrefab = Instantiate(intrestPointPrefab, this.transform.position, Quaternion.identity);
         tempPrefab.transform.parent = this.transform;
         tempPrefab.GetComponent<PointOfIntrest>().pointType = disasterType;
+        tempPrefab.GetComponent<PointOfIntrest>().initPoint(disasterType);
     }
 }

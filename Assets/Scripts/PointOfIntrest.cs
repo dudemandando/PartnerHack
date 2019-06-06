@@ -14,6 +14,8 @@ public class PointOfIntrest : MonoBehaviour
     public Color highlightColor;
     public float heightStandOff;
 
+    public GameObject[] iconModels;
+
     private bool bPropogatedOnce = false;
     
 
@@ -23,39 +25,45 @@ public class PointOfIntrest : MonoBehaviour
         //transform.LookAt(Camera.main.transform);
     }
 
-    public void initPoint(string initType, Sprite iconSprite)
+    void OnEnable()
+    {
+        initPoint(pointType);
+    }
+
+
+    public void initPoint(Type initType)
     {
 
         switch (initType)
         {
-            case "Airplane":
-                pointType = Type.Airplane;
+            case Type.Airplane:
+                iconModels[0].SetActive(true);
                 break;
-            case "Blocked":
-                pointType = Type.Blocked;
+            case Type.Blocked:
+                iconModels[1].SetActive(true);
                 break;
-            case "Boat":
-                pointType = Type.Blocked;
+            case Type.Boat:
+                iconModels[2].SetActive(true);
                 break;
-            case "Car":
-                pointType = Type.Blocked;
+            case Type.Car:
+                iconModels[3].SetActive(true);
                 break;
-            case "Electrical":
-                pointType = Type.Electrical;
+            case Type.Electrical:
+                iconModels[4].SetActive(true);
                 break;
-            case "FireFighter":
-                pointType = Type.FireFighter;
+            case Type.FireFighter:
+                iconModels[5].SetActive(true);
                 break;
-            case "Helicopter":
-                pointType = Type.Helicopter;
+            case Type.Helicopter:
+                iconModels[6].SetActive(true);
                 break;
-            case "Medical":
-                pointType = Type.Medical;
+            case Type.Medical:
+                iconModels[7].SetActive(true);
                 break;
 
         }
         
-        iconImage.sprite = iconSprite;
+        //iconImage.sprite = iconSprite;
     }
 
     public void AddHeightStandoff()

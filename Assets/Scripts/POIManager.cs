@@ -45,7 +45,7 @@ public class POIManager : MonoBehaviour
         {
             if(sp.name.ToString() == spawnType)
             {
-                spawnedPoint.GetComponent<PointOfIntrest>().initPoint(spawnType, sp);
+                spawnedPoint.GetComponent<PointOfIntrest>().initPoint(Type.Medical);
             }
         }
         

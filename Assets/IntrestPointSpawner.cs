@@ -5,10 +5,12 @@ using UnityEngine;
 public class IntrestPointSpawner : MonoBehaviour
 {
     public GameObject intrestPointPrefab;
+    public Type disasterType;
 
     void Start()
     {
-        var tempPrefab = Instantiate(intrestPointPrefab, this.transform.position, Quaternion.identity);
+        GameObject tempPrefab = Instantiate(intrestPointPrefab, this.transform.position, Quaternion.identity);
         tempPrefab.transform.parent = this.transform;
+        tempPrefab.GetComponent<PointOfIntrest>().pointType = disasterType;
     }
 }

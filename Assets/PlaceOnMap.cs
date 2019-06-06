@@ -6,6 +6,9 @@ public class PlaceOnMap : MonoBehaviour
 {
     public LineRenderer lr;
     public LayerMask layerToCheck;
+    public AudioSource audioSrc;
+    public AudioClip snapToMapClip;
+    public AudioClip destroyClip;
 
     private float t = 0;
     private RaycastHit hit;
@@ -24,9 +27,16 @@ public class PlaceOnMap : MonoBehaviour
         lr.enabled = false;
 
         if (hit.transform != null)
+        {
+            audioSrc.PlayOneShot(snapToMapClip);
             transform.position = hit.point;
+        }            
         else
+        {
+            audioSrc.PlayOneShot(destroyClip);
             this.gameObject.SetActive(false);
+        }
+            
     }
 
     void Update()

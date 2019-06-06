@@ -810,6 +810,7 @@ MonoBehaviour:
   normalColor: {r: 0, g: 0, b: 0, a: 0}
   highlightColor: {r: 0, g: 0, b: 0, a: 0}
   heightStandOff: 0
+  pointOfIntrestPrefab: {fileID: 8727277739111286423}
   iconModels:
   - {fileID: 180731906380875304}
   - {fileID: 4094530267992258286}
@@ -997,11 +998,11 @@ MonoBehaviour:
   scaleHandleSize: 0.002
   rotationHandlePrefab: {fileID: 100000, guid: 57c53da2552a8114ab6d68e0cd31b1eb, type: 3}
   rotationHandleDiameter: 0.0035
-  showScaleHandles: 1
+  showScaleHandles: 0
   showRotationHandleForX: 0
-  showRotationHandleForY: 1
+  showRotationHandleForY: 0
   showRotationHandleForZ: 0
-  drawTetherWhenManipulating: 1
+  drawTetherWhenManipulating: 0
   debugText: {fileID: 0}
   RotateStarted:
     m_PersistentCalls:

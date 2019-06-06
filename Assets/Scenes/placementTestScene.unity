@@ -790,7 +790,7 @@ MonoBehaviour:
   gazeTransform: {fileID: 0}
   minHeadVelocityThreshold: 0.5
   maxHeadVelocityThreshold: 2
-  preferEyeTracking: 0
+  preferEyeTracking: 1
 --- !u!114 &793111752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,7 +2132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300694470, guid: f64fcf4cb1f3ab24a8fd21044b23f006, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000004232577
+      value: -0.00002363757
       objectReference: {fileID: 0}
     - target: {fileID: 422378163, guid: f64fcf4cb1f3ab24a8fd21044b23f006, type: 3}
       propertyPath: m_havePropertiesChanged

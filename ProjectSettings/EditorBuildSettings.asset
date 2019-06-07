@@ -32,10 +32,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/EyeTrackingTestScene.unity
     guid: 1d08af9b2657a3f4eb94174ff8502a99
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/placementTestScene.unity
     guid: 7d8f4f842b9fd6b44b96ddd997b8d0b6
   - enabled: 0
     path: Assets/Scenes/DanPointDisplayTest.unity
     guid: afab2528ab164a241b598559c822d34a
+  - enabled: 1
+    path: Assets/Scenes/test2NoMergeConflict.unity
+    guid: 7b4221a818a014d4686e94df0c02df84
   m_configObjects: {}

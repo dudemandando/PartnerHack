@@ -6,11 +6,11 @@ public class ControlLineDots : MonoBehaviour
 {
     Material material;
     [Tooltip("Higher the number, slower the speed")]
-    public int speedFactor = 4;
+    public int speedFactor = 8;
 
     private void Start()
     {
-        material = GetComponent<Renderer>().material;
+        material = GetComponent<LineRenderer>().material;
     }
     void Update()
     {

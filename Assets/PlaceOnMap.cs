@@ -10,11 +10,16 @@ public class PlaceOnMap : MonoBehaviour
     public AudioSource audioSrc;
     public AudioClip snapToMapClip;
     public AudioClip destroyClip;
+    
+    //private Vector3 defaultScale;
+    //public Vector3 smallScaleVal;
 
     private float t = 0;
     private RaycastHit hit;
 
     private bool isBeingManipulated = false;
+
+
 
     public void ShowLinePlacement()
     {
@@ -25,13 +30,13 @@ public class PlaceOnMap : MonoBehaviour
     public void SnapToMap()
     {
         isBeingManipulated = false;
-        lr.enabled = false;
+        //lr.enabled = false;
         GetComponent<BoundingBox>().UnhighlightWires();
 
         if (hit.transform != null)
         {
             audioSrc.PlayOneShot(snapToMapClip);
-            transform.position = hit.point;
+            //transform.position = hit.point;
             this.gameObject.GetComponent<PointOfIntrest>().AddToPOIList();
         }            
         else

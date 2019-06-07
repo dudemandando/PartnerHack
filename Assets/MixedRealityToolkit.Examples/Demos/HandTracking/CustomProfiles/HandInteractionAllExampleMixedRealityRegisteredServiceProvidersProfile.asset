@@ -13,4 +13,11 @@ MonoBehaviour:
   m_Name: HandInteractionAllExampleMixedRealityRegisteredServiceProvidersProfile
   m_EditorClassIdentifier: 
   isCustomProfile: 1
-  configurations: []
+  configurations:
+  - componentType:
+      reference: 
+    componentName: New Configuration 0
+    priority: 10
+    runtimePlatform: -1
+    configurationProfile: {fileID: 11400000, guid: 4bfe7b866d281d346bc429152139886d,
+      type: 2}

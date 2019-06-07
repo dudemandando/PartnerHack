@@ -25,20 +25,19 @@ public class PlaceOnMap : MonoBehaviour
     public void SnapToMap()
     {
         isBeingManipulated = false;
-        lr.enabled = false;
+        //lr.enabled = false;
         GetComponent<BoundingBox>().UnhighlightWires();
 
         if (hit.transform != null)
         {
             audioSrc.PlayOneShot(snapToMapClip);
-            transform.position = hit.point;
+            //transform.position = hit.point;
         }            
         else
         {
             audioSrc.PlayOneShot(destroyClip);
             this.gameObject.SetActive(false);
-        }
-            
+        }            
     }
 
     void Update()

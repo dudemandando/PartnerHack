@@ -58,8 +58,9 @@ public class PointOfIntrest : MonoBehaviour
                 break;
 
         }
+
         
-        //iconImage.sprite = iconSprite;
+        pointType = initType;
     }
 
     public void AddHeightStandoff()
@@ -80,7 +81,7 @@ public class PointOfIntrest : MonoBehaviour
     //Adds to the display list
     public void AddToPOIList()
     {
-        if (!poiManager)
+        if (poiManager == null)
         {
             poiManager = GameObject.Find("POIManager").GetComponent<POIManager>();
         }

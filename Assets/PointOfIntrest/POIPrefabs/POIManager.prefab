@@ -65,4 +65,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9c54d7a583ea8f140a76b6377f90050a, type: 3}
   terrainManager: {fileID: 0}
   rowContainer: {fileID: 0}
-  row: {fileID: 0}
+  row: {fileID: 7047944681208376565, guid: 2f040ecace27ad948a808174b0f20f6e, type: 3}

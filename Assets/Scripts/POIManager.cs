@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public enum Type
 {
@@ -64,19 +65,19 @@ public class POIManager : MonoBehaviour
 
     public void AddPoint(PointOfIntrest point)
     {
-        GameObject newRow = Instantiate(row, rowContainer.transform);
-        //if (!allInterestPoints.Contains(point.gameObject))
-        //{
-        //    //creates the new row
-        //    allInterestPoints.Add(point.gameObject);
-        //    CreateRowInDisplay(point, allInterestPoints.IndexOf(point.gameObject));
-        //}
-        //else
-        //{
-        //    //updates the lat and long
-        //    UpdateRow(point);
-        //}
-       
+
+        if (!allInterestPoints.Contains(point.gameObject))
+        {
+            //creates the new row
+            allInterestPoints.Add(point.gameObject);
+            CreateRowInDisplay(point, allInterestPoints.IndexOf(point.gameObject));
+        }
+        else
+        {
+            //updates the lat and long
+            UpdateRow(point);
+        }
+
     }
 
     public void RemovePoint(PointOfIntrest point)
@@ -93,6 +94,7 @@ public class POIManager : MonoBehaviour
         newRow.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = idx.ToString();
 
         //Set the Image
+        newRow.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = RetrieveProperIconSprite(point.pointType);
 
         //Set the type
         newRow.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = point.pointType.ToString();
@@ -107,7 +109,7 @@ public class POIManager : MonoBehaviour
         newRow.transform.GetChild(4).gameObject.GetComponent<TextMeshProUGUI>().text = newlatLong.lng.ToString();
     }
 
-    //updates the text
+    //updates the lat long text
     public void UpdateRow(PointOfIntrest point)
     {
         //needs to call the GetLatLong(Vector3 otherPos) in Terrain Manager
@@ -118,6 +120,20 @@ public class POIManager : MonoBehaviour
 
         //Set Long
         point.rowObj.transform.GetChild(4).gameObject.GetComponent<TextMeshProUGUI>().text = newlatLong.lng.ToString();
+    }
+
+    //loops through all images to find the correct one for the row to display
+    private Sprite RetrieveProperIconSprite(Type type)
+    {
+        foreach(Sprite sp in iconImages)
+        {
+            if(sp.name == type.ToString())
+            {
+                return sp;
+            }
+        }
+
+        return null;
     }
 
 

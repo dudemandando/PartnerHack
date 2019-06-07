@@ -7,14 +7,16 @@ using UnityEngine.UI;
 public enum Type
 {
     None,
+    Accident,
     Airplane,
     Blocked,
-    Boat,
-    Car,
-    Electrical,
-    FireFighter,
-    Helicopter,
-    Medical
+    Ferry,
+    Fire,
+    Health,
+    People,
+    Unknown,
+    Warning,
+    Wind
 }
 
 public class POIManager : MonoBehaviour
@@ -27,6 +29,7 @@ public class POIManager : MonoBehaviour
     //Point Display stuff
     public GameObject rowContainer;
     public GameObject row;
+    public List<GameObject> modelIcons;
 
 
     //float lat = 37.318508f;
@@ -51,7 +54,7 @@ public class POIManager : MonoBehaviour
         {
             if(sp.name.ToString() == spawnType)
             {
-                spawnedPoint.GetComponent<PointOfIntrest>().initPoint(Type.Medical);
+                //spawnedPoint.GetComponent<PointOfIntrest>().initPoint(Type.Medical);
             }
         }
         
@@ -94,7 +97,7 @@ public class POIManager : MonoBehaviour
         newRow.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = idx.ToString();
 
         //Set the Image
-        newRow.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = RetrieveProperIconSprite(point.pointType);
+        newRow.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = RetrieveIconSprite(point);
 
         //Set the type
         newRow.transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>().text = point.pointType.ToString();
@@ -123,17 +126,60 @@ public class POIManager : MonoBehaviour
     }
 
     //loops through all images to find the correct one for the row to display
-    private Sprite RetrieveProperIconSprite(Type type)
-    {
-        foreach(Sprite sp in iconImages)
-        {
-            if(sp.name == type.ToString())
-            {
-                return sp;
-            }
-        }
+    //private Sprite RetrieveProperIconSprite(Type type)
+    //{
+    //    foreach(Sprite sp in iconImages)
+    //    {
+    //        if(sp.name == type.ToString())
+    //        {
+    //            return sp;
+    //        }
+    //    }
 
-        return null;
+    //    return null;
+    //}
+
+    private Sprite RetrieveIconSprite(PointOfIntrest point)
+    {
+        Sprite sp;
+        switch (point.pointType)
+        {
+            case Type.Accident:
+                sp = iconImages[0];
+                break;
+            case Type.Airplane:
+                sp = iconImages[1];
+                break;
+            case Type.Blocked:
+                sp = iconImages[2];
+                break;
+            case Type.Ferry:
+                sp = iconImages[3];
+                break;
+            case Type.Health:
+                sp = iconImages[4];
+                break;
+            case Type.People:
+                sp = iconImages[5];
+                break;
+            case Type.Unknown:
+                sp = iconImages[6];
+                break;
+            case Type.Warning:
+                sp = iconImages[7];
+                break;
+            case Type.Wind:
+                sp = iconImages[8];
+                break;
+            case Type.Fire:
+                sp = iconImages[9];
+                break;
+            default:
+                Debug.Log("No icon found");
+                sp = null;
+                break;
+        }
+        return sp;
     }
 
 

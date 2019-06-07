@@ -68,8 +68,9 @@ public class TerrainManager : MonoBehaviour
         
         float newX, newZ;
 
-        newZ = -1 * otherPos.z.Remap(lowLat, highLat, LowZ, HighZ);
-        newX = -1 * otherPos.x.Remap(lowLong, highLong, LowX, HighX);
+        //we flip the low and high with lat and long so that we are converting within the other range
+        newZ = -1 * otherPos.z.Remap(LowZ, HighZ, lowLat, highLat);
+        newX = -1 * otherPos.x.Remap(LowX, HighX, lowLong, highLong);
 
 
         LatLong pos = new LatLong(newZ, newX);

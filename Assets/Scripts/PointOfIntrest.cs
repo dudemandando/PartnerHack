@@ -32,29 +32,35 @@ public class PointOfIntrest : MonoBehaviour
 
         switch (initType)
         {
-            case Type.Airplane:
+            case Type.Accident:
                 iconModels[0].SetActive(true);
                 break;
-            case Type.Blocked:
+            case Type.Airplane:
                 iconModels[1].SetActive(true);
                 break;
-            case Type.Boat:
+            case Type.Blocked:
                 iconModels[2].SetActive(true);
                 break;
-            case Type.Car:
+            case Type.Ferry:
                 iconModels[3].SetActive(true);
                 break;
-            case Type.Electrical:
+            case Type.Health:
                 iconModels[4].SetActive(true);
                 break;
-            case Type.FireFighter:
+            case Type.People:
                 iconModels[5].SetActive(true);
                 break;
-            case Type.Helicopter:
+            case Type.Unknown:
                 iconModels[6].SetActive(true);
                 break;
-            case Type.Medical:
+            case Type.Warning:
                 iconModels[7].SetActive(true);
+                break;
+            case Type.Wind:
+                iconModels[8].SetActive(true);
+                break;
+            case Type.Fire:
+                iconModels[9].SetActive(true);
                 break;
 
         }

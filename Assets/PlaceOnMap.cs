@@ -37,8 +37,10 @@ public class PlaceOnMap : MonoBehaviour
         else
         {
             audioSrc.PlayOneShot(destroyClip);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
             this.gameObject.GetComponent<PointOfIntrest>().RemoveFromPOIList();
+            Destroy(this.gameObject.GetComponent<PointOfIntrest>().rowObj);
+            Destroy(this.gameObject);
         }
             
     }

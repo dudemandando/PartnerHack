@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicButtonIconFontMaterial
+  m_Name: HolographicButtonIconFontMaterial 1
   m_Shader: {fileID: 10101, guid: 0000000000000000e000000000000000, type: 0}
   m_ShaderKeywords: _USECOLOR_ON _USEMAINTEX_ON
   m_LightmapFlags: 5
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 466b28a7abdd4f2fb56a1b9f929d7aaa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 97fc307ee43537b4bae5067c8c3cf956, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

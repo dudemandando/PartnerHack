@@ -769,7 +769,7 @@ MonoBehaviour:
   gazeTransform: {fileID: 0}
   minHeadVelocityThreshold: 0.5
   maxHeadVelocityThreshold: 2
-  preferEyeTracking: 0
+  preferEyeTracking: 1
 --- !u!114 &793111752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2025,6 +2025,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 60396074, guid: f64fcf4cb1f3ab24a8fd21044b23f006, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 60396074, guid: f64fcf4cb1f3ab24a8fd21044b23f006, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 60396074, guid: f64fcf4cb1f3ab24a8fd21044b23f006, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 300694470, guid: f64fcf4cb1f3ab24a8fd21044b23f006, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00002363757
+      objectReference: {fileID: 0}
+>>>>>>> 92fbfcc924ff43654389e74857e961c3995aecb2
     - target: {fileID: 422378163, guid: f64fcf4cb1f3ab24a8fd21044b23f006, type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1

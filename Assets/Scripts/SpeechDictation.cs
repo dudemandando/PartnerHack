@@ -5,8 +5,8 @@ using System;
 public class SpeechDictation : MonoBehaviour
 {
     public Text outputText;
-    public Button startButton;
-    public Button stopButton;
+    //public Button startButton;
+    //public Button stopButton;
 
     private object threadLocker = new object();
     private string message = String.Empty;
@@ -15,8 +15,8 @@ public class SpeechDictation : MonoBehaviour
 
     private void Start()
     {
-        startButton.onClick.AddListener(StartButton);
-        stopButton.onClick.AddListener(StopButton);
+        //startButton.onClick.AddListener(StartButton);
+        //stopButton.onClick.AddListener(StopButton);
     }
     public void StartButton()
     {

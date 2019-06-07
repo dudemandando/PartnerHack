@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Microsoft.MixedReality.Toolkit.UI;
 
 public class PointOfIntrest : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PointOfIntrest : MonoBehaviour
     public Color normalColor;
     public Color highlightColor;
     public float heightStandOff;
+    public GameObject pointOfIntrestPrefab;
     public GameObject[] iconModels;
     private bool bPropogatedOnce = false;
     public GameObject rowObj;
@@ -78,7 +80,8 @@ public class PointOfIntrest : MonoBehaviour
     {
         if(bPropogatedOnce == false)
         {
-            var replace = Instantiate(this.gameObject, transform.position, Quaternion.identity, this.transform.parent);
+            var replace = Instantiate(pointOfIntrestPrefab, transform.position, Quaternion.identity, this.transform.parent);
+            replace.GetComponent<BoundingBox>().UnhighlightWires();
         }
 
         bPropogatedOnce = true;        

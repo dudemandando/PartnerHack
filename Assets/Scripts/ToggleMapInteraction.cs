@@ -8,6 +8,7 @@ public class ToggleMapInteraction : MonoBehaviour
     public ManipulationHandler manipHandler;
     public BoundingBox boundBox;
     public BoxCollider boxCol;
+    public ParticleSystem ps;
 
     private bool bToggleState = true;
 
@@ -34,5 +35,10 @@ public class ToggleMapInteraction : MonoBehaviour
 
             bToggleState = true;
         }
+    }
+
+    public void PlayParticleSys()
+    {
+        ps.Play();
     }
 }

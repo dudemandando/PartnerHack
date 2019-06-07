@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3711e2696243d174c8023776ff53cd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointPrefab: {fileID: 6306954037115861930, guid: a9660e6fd7d0035468c0cb67f6f40269,
+  pointPrefab: {fileID: 8727277739111286423, guid: 7ce8fbc5a719ded49808ebce4cbdf5ce,
     type: 3}
   allInterestPoints: []
   iconImages:
@@ -63,3 +63,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f03866ad95cd58248bc2d6a733fed18d, type: 3}
   - {fileID: 21300000, guid: 4325902f802ad144c9692b0c9936c883, type: 3}
   - {fileID: 21300000, guid: 9c54d7a583ea8f140a76b6377f90050a, type: 3}
+  terrainManager: {fileID: 0}
+  rowContainer: {fileID: 0}
+  row: {fileID: 0}

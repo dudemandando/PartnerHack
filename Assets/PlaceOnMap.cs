@@ -32,11 +32,13 @@ public class PlaceOnMap : MonoBehaviour
         {
             audioSrc.PlayOneShot(snapToMapClip);
             transform.position = hit.point;
+            this.gameObject.GetComponent<PointOfIntrest>().AddToPOIList();
         }            
         else
         {
             audioSrc.PlayOneShot(destroyClip);
             this.gameObject.SetActive(false);
+            this.gameObject.GetComponent<PointOfIntrest>().RemoveFromPOIList();
         }
             
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IntrestPointSpawner : MonoBehaviour
 {
+    public POIManager poiManager;
     public GameObject intrestPointPrefab;
     public Type disasterType;
 
@@ -13,5 +14,6 @@ public class IntrestPointSpawner : MonoBehaviour
         tempPrefab.transform.parent = this.transform;
         tempPrefab.GetComponent<PointOfIntrest>().pointType = disasterType;
         tempPrefab.GetComponent<PointOfIntrest>().initPoint(disasterType);
+        poiManager = GameObject.Find("POIManager").GetComponent<POIManager>();
     }
 }

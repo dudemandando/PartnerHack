@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PointOfIntrest : MonoBehaviour
 {
-
+    public POIManager poiManager;
     public Type pointType;
     public GameObject terrainRefPoint; //Ghost reference point to be attached to the Terrain
     public Image iconImage;
@@ -13,21 +13,17 @@ public class PointOfIntrest : MonoBehaviour
     public Color normalColor;
     public Color highlightColor;
     public float heightStandOff;
-
     public GameObject[] iconModels;
-
     private bool bPropogatedOnce = false;
-    
+    public GameObject rowObj;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //transform.LookAt(Camera.main.transform);
-    }
+   
+    
 
     void OnEnable()
     {
         initPoint(pointType);
+        poiManager = GameObject.Find("POIManager").GetComponent<POIManager>();
     }
 
 
@@ -80,4 +76,22 @@ public class PointOfIntrest : MonoBehaviour
 
         bPropogatedOnce = true;        
     }
+
+    //Adds to the display list
+    public void AddToPOIList()
+    {
+        if (!poiManager)
+        {
+            poiManager = GameObject.Find("POIManager").GetComponent<POIManager>();
+        }
+
+        poiManager.AddPoint(this);
+    }
+
+    //Removes form the display list
+    public void RemoveFromPOIList()
+    {
+        poiManager.RemovePoint(this);
+    }
+
 }

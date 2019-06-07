@@ -60,4 +60,32 @@ public class TerrainManager : MonoBehaviour
         return this.transform.TransformPoint(new Vector3(newX, 0.02f, newZ));
 
     }
+
+    public LatLong GetLatLong(Vector3 otherPos)
+    {
+        Debug.Log("Getting Position in Lat & Long");
+        GetBounds();
+        
+        float newX, newZ;
+
+        //we flip the low and high with lat and long so that we are converting within the other range
+        newZ = -1 * otherPos.z.Remap(LowZ, HighZ, lowLat, highLat);
+        newX = -1 * otherPos.x.Remap(LowX, HighX, lowLong, highLong);
+
+
+        LatLong pos = new LatLong(newZ, newX);
+        return pos;
+    }
+}
+
+public class LatLong
+{
+    public float lat;
+    public float lng;
+
+    public LatLong(float lat, float lng)
+    {
+        this.lat = lat;
+        this.lng = lng;
+    }
 }
